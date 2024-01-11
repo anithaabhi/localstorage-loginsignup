@@ -1,0 +1,14 @@
+<div class="row mt-5">
+    <div class="offset-3 col-md-6">
+        <div class="card p-5">
+            <form>
+            <input type="text" class="form-control mb-3"  name="username" placeholder="username"  [(ngModel)]="signupobj.username">
+
+            <input type="text" class="form-control mb-3"   name="email" placeholder="email"  [(ngModel)]="signupobj.email">
+            <input type="text" class="form-control mb-3"   name="password" placeholder="password"  [(ngModel)]="signupobj.password">
+            <button class="btn btn-primary" (click)="SignUp()">SignUp</button>
+            </form>
+        </div>
+    </div>
+</div>
+

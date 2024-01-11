@@ -1,0 +1,13 @@
+<div class="row mt-5">
+    <div class="offset-3 col-md-6">
+        <div class="card p-5">
+            <form>
+            <input type="text" class="form-control mb-3"  name="username" placeholder="username"  [(ngModel)]="loginobj.username">
+
+            <input type="text" class="form-control mb-3"   name="password" placeholder="password"  [(ngModel)]="loginobj.password">
+            <button class="btn btn-primary" (click)="LogIn()">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
