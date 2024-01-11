@@ -1,0 +1,21 @@
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-3 mb-3" *ngFor="let product of produtsArray">
+            <div class="card  h-100">
+                <a routerLink="/productDetail"><img src="{{product.images[0]}}" class="card-img-top" alt="..." style="height: 500px; border: 1px solid #ccc;"></a>
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                  <p class="card-text">{{product.description}}</p>
+                  <h5>{{product.price|currency}}</h5>
+                </div>
+                <a class="btn btn-primary" routerLink="/productDetail">Go somewhere</a> 
+
+              </div>
+        </div>
+
+
+
+
+        
+    </div>
+</div>

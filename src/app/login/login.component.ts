@@ -1,4 +1,7 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,26 +9,32 @@ import { Component,OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-signupuses: any;
-ngOnInit(){
-  const localdata:any=localStorage.getItem('signupusers')
-  if(localdata!=null){
-  this.signupuses=JSON.parse(localdata)
-  }
-}
-loginobj:any={
-  username:"",
-  password:""
-}
-
-LogIn(){
-  const isuserExits=this.signupuses.find((m: any)=>m.username==this.loginobj.username&&m.password==this.loginobj.password)
-  if(isuserExits!=undefined){
-    alert("loginsuccess")
-  }else{
-    alert("fail")
-  }
+  loginForm!:FormGroup;
   
+constructor(private fb:FormBuilder,private authServie:AuthService, private router:Router){
+  this.loginForm=this.fb.group({
+    username:[""],
+    password:[""]
+  })
 }
 
+  ngOnInit() {
+    
+  }
+  loginFn(){
+    debugger;
+    this.authServie.loginAuth(this.loginForm.value).subscribe((res:any)=>{
+// console.log(res)
+
+if(res.token){
+  alert("login suess")
+
+}else{
+  alert("fail")
+}
+localStorage.setItem("logintoken",res.token)
+
+this.router.navigateByUrl("/produts")
+    })
+  }
 }

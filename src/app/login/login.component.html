@@ -1,13 +1,20 @@
-<div class="row mt-5">
-    <div class="offset-3 col-md-6">
-        <div class="card p-5">
-            <form>
-            <input type="text" class="form-control mb-3"  name="username" placeholder="username"  [(ngModel)]="loginobj.username">
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="card m-5">
+            <div class="card-header text-center text-primary"><h2>LogIn</h2></div>
+            <form [formGroup]="loginForm">
+               <div class="form-group m-5">
+                   <input type="text" class="form-control" placeholder="username"  formControlName="username">
+               </div>
+               <div class="form-group m-5">
+                <input type="password" class="form-control" placeholder="password" formControlName="password">
+            </div>
 
-            <input type="text" class="form-control mb-3"   name="password" placeholder="password"  [(ngModel)]="loginobj.password">
-            <button class="btn btn-primary" (click)="LogIn()">Login</button>
             </form>
+            <button class="btn btn-primary text-center" (click)="loginFn()">Login</button>
+
+
         </div>
+
     </div>
 </div>
-
