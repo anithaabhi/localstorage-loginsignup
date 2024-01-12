@@ -8,7 +8,10 @@ import { AuthService } from '../auth.service';
 })
 export class ProdutsComponent implements OnInit{
   produtsArray:any[]=[];
+p:number=0;
 
+totalcards:number=10;
+totalSizes:any=[5,10,15,20]
 constructor(private _authservies:AuthService){
 }
   ngOnInit(){
