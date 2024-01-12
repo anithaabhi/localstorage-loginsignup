@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { TokenInterceptor } from './token.interceptor';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule,ReactiveFormsModule
+    AppRoutingModule,FormsModule,HttpClientModule,ReactiveFormsModule,NgxPaginationModule
   ],
   providers: [
     {

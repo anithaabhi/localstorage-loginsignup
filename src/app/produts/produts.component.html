@@ -1,6 +1,6 @@
 <div class="container my-5">
     <div class="row">
-        <div class="col-md-3 mb-3" *ngFor="let product of produtsArray |paginate:args:{itemsPerPage:5,currentPage:p}">
+        <div class="col-md-3 mb-3" *ngFor="let product of produtsArray | paginate:{itemsPerPage:8,currentPage:p}">
             <div class="card  h-100">
                 <a routerLink="/productDetail"><img src="{{product.images[0]}}" class="card-img-top" alt="..." style="height: 500px; border: 1px solid #ccc;"></a>
                 <div class="card-body">
@@ -11,13 +11,18 @@
                 <a class="btn btn-primary" routerLink="/productDetail">Go somewhere</a> 
 
               </div>
-              <pagination-controls></pagination-controls>
         </div>
 
+    </div>
 
+    <div class="row d-flex">
+
+        <pagination-controls (pageChange)="p=$event" class="right"></pagination-controls>
+    </div>
+</div>
+        
 
 
 
         
-    </div>
-</div>
+    
